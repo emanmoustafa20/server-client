@@ -38,8 +38,8 @@ void socket::createSocket()
 void socket::connected()
 {
     qDebug() <<"Connected!";
-    //sendData();
-    sendArray();
+    sendData();
+    //sendArray();
     state=true;
 }
 bool socket::isConnected(){
@@ -75,7 +75,7 @@ void socket::sendArray(){
     qDebug()<<"float"<<a;
     QString DataAsString = QString(array);
     qDebug()<<"String"<<DataAsString;
-    std::string temp= DataAsString.toStdString();
+    std::string temp=array.toStdString();
     float m=std::stof(temp);
     qDebug()<<"m"<<m;
 /*
